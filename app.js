@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 // CORS - cross origin resource sharing
 // origin - the beginning of your url
@@ -9,7 +10,7 @@ const data = require('./data.json');
 
 // singleton ( there can only be one!! )
 const app = express(); // returns an object, with methods designed to handle Requests.
-const PORT = 3001;
+const PORT = process.env.PORT;
 
 // enable cross origin resource sharing between localhost:3001 and any other url that may make a request.
 app.use(cors());
